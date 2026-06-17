@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月ビューティーコレクション 出店のご案内</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0b2f61;
+    --blue: #1d4ed8;
+    --blue-mid: #2563eb;
+    --blue-light: #dbeafe;
+    --blue-pale: #eff6ff;
+    --gold: #c8960c;
+    --gold-light: #fef3c7;
+    --red-accent: #dc2626;
+    --red-bg: #fef2f2;
+    --text: #1e293b;
+    --text-mute: #475569;
+    --border: #cbd5e1;
+    --white: #ffffff;
+    --section-gap: 3rem;
+  }
+
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+    background: #f1f5f9;
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 15px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #0f3d7a 55%, var(--blue) 100%);
+    color: var(--white);
+    padding: 4rem 1.5rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 28px,
+      rgba(255,255,255,0.025) 28px,
+      rgba(255,255,255,0.025) 30px
+    );
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #93c5fd;
+    border: 1px solid #3b82f6;
+    border-radius: 2px;
+    padding: 0.25rem 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.6rem, 5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+    margin-bottom: 0.6rem;
+  }
+  .hero-sub {
+    font-size: 0.95rem;
+    color: #bfdbfe;
+    margin-bottom: 2rem;
+  }
+  .hero-meta {
+    display: inline-flex;
+    gap: 2rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 0.9rem 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-meta-item {
+    text-align: center;
+  }
+  .hero-meta-item .label {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    color: #93c5fd;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  .hero-meta-item .value {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  /* ── WRAPPER ── */
+  .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  /* ── GREETING ── */
+  .greeting {
+    background: var(--white);
+    border-left: 4px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 1.5rem 1.75rem;
+    margin: 2.5rem 0;
+    color: var(--text);
+    font-size: 0.93rem;
+    line-height: 1.9;
+  }
+  .greeting .salutation {
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--navy);
+  }
+
+  /* ── SECTION ── */
+  .section {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 2rem 2rem 2rem;
+    margin-bottom: 1.75rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 2px solid var(--blue-light);
+  }
+  .section-num {
+    background: var(--navy);
+    color: var(--white);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .section h2 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+  }
+  .badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .badge-stage { background: #ede9fe; color: #6d28d9; }
+  .badge-rule  { background: #fee2e2; color: #b91c1c; }
+  .badge-setra { background: #d1fae5; color: #065f46; }
+
+  /* ── OVERVIEW TABLE ── */
+  .overview-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  .overview-table tr {
+    border-bottom: 1px solid var(--border);
+  }
+  .overview-table tr:last-child { border-bottom: none; }
+  .overview-table th {
+    width: 7rem;
+    padding: 0.75rem 1rem 0.75rem 0;
+    vertical-align: top;
+    color: var(--navy);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .overview-table td {
+    padding: 0.75rem 0;
+    color: var(--text);
+    vertical-align: top;
+  }
+  .overview-table td ul {
+    margin-top: 0.3rem;
+    padding-left: 1.2rem;
+  }
+  .overview-table td ul li { margin-bottom: 0.2rem; }
+
+  /* ── STAGE SECTION ── */
+  .stage-section {
+    background: linear-gradient(160deg, #eef2ff 0%, #ede9fe 100%);
+    border: 1px solid #c4b5fd;
+  }
+  .stage-section .section-header { border-bottom-color: #c4b5fd; }
+  .stage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .stage-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    border: 1px solid #c4b5fd;
+  }
+  .stage-card h3 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #6d28d9;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+  .stage-card p, .stage-card ul { font-size: 0.88rem; color: var(--text-mute); }
+  .stage-card ul { padding-left: 1.1rem; }
+  .stage-card ul li { margin-bottom: 0.2rem; }
+  .privilege-box {
+    background: #fdf4ff;
+    border-left: 3px solid #a855f7;
+    border-radius: 0 6px 6px 0;
+    padding: 0.85rem 1rem;
+    margin-top: 1rem;
+    font-size: 0.88rem;
+    color: #581c87;
+  }
+  .privilege-box strong { display: block; margin-bottom: 0.25rem; }
+
+  /* ── RULE SECTION ── */
+  .rule-section {
+    background: var(--red-bg);
+    border: 2px solid #fca5a5;
+  }
+  .rule-section .section-header { border-bottom-color: #fca5a5; }
+  .rule-section h2 { color: #991b1b; }
+  .rule-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+  }
+  .rule-step {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    background: var(--white);
+    border-radius: 7px;
+    padding: 0.9rem 1rem;
+    border: 1px solid #fca5a5;
+  }
+  .rule-step-icon {
+    background: #dc2626;
+    color: var(--white);
+    font-size: 0.7rem;
+    font-weight: 800;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+    letter-spacing: 0.03em;
+  }
+  .rule-step p { font-size: 0.9rem; color: var(--text); }
+
+  /* ── SETRA SECTION ── */
+  .setra-section {
+    background: linear-gradient(160deg, #ecfdf5 0%, #d1fae5 100%);
+    border: 1px solid #6ee7b7;
+  }
+  .setra-section .section-header { border-bottom-color: #6ee7b7; }
+  .setra-section h2 { color: #065f46; }
+  .setra-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .setra-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    border: 1px solid #a7f3d0;
+  }
+  .setra-card h3 {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #065f46;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.45rem;
+  }
+  .setra-card p { font-size: 0.88rem; color: var(--text-mute); }
+
+  /* ── RECEPTION SECTION ── */
+  .reception-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .reception-list li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.91rem;
+  }
+  .reception-list li::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: var(--blue);
+    border-radius: 50%;
+    margin-top: 0.55rem;
+    flex-shrink: 0;
+  }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    background: var(--navy);
+    border-radius: 10px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--white);
+  }
+  .cta-section h2 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.04em;
+  }
+  .cta-section p {
+    font-size: 0.88rem;
+    color: #93c5fd;
+    margin-bottom: 1.75rem;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: opacity 0.15s;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border-color: rgba(255,255,255,0.4);
+  }
+  .btn:hover { opacity: 0.85; }
+  .btn-tag {
+    font-size: 0.62rem;
+    background: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    padding: 0.1rem 0.4rem;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0a1f3d;
+    color: #64748b;
+    text-align: center;
+    font-size: 0.78rem;
+    padding: 1.5rem 1rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .hero { padding: 3rem 1rem 2rem; }
+    .hero-meta { gap: 1.25rem; }
+    .section { padding: 1.5rem 1.25rem; }
+    .stage-grid, .setra-grid { grid-template-columns: 1fr; }
+    .overview-table th { width: 5.5rem; font-size: 0.82rem; }
+    .cta-section { padding: 2rem 1.25rem; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .btn { width: 100%; max-width: 280px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-eyebrow">MAKER PARTNER INVITATION 2026</div>
+  <h1>10月ビューティーコレクション<br>出店のご案内・企画概要</h1>
+  <p class="hero-sub">パートナーメーカー各位</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="label">DATE</span>
+      <span class="value">2026年10月6日（月）</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="label">VENUE</span>
+      <span class="value">三方ホール（全ホール貸切）</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrapper">
+
+  <!-- GREETING -->
+  <div class="greeting">
+    <p class="salutation">拝啓　パートナーメーカー各位</p>
+    <p>皆様におかれましては益々ご清栄のこととお慶び申し上げます。平素は格別のご高配を賜り、厚く御礼申し上げます。</p>
+    <p>本年10月に開催いたします「ビューティーコレクション」に向け、出店メーカー様へのご案内および企画概要を公開いたしました。今回のコレクションでは、従来の展示会スタイルから一歩踏み込み、会場一体となって盛り上がるエンターテイメント性と、確実な成果に繋がる即売体制を強化いたします。内容をご確認いただき、出店・企画のご検討をよろしくお願い申し上げます。</p>
+    <p style="margin-top:0.75rem; text-align:right;">敬具</p>
+  </div>
+
+  <!-- 1. 開催概要 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">1</span>
+      <h2>開催概要</h2>
+    </div>
+    <table class="overview-table">
+      <tr>
+        <th>日時</th>
+        <td>2026年10月6日（月）</td>
+      </tr>
+      <tr>
+        <th>会場</th>
+        <td>三方ホール（全ホール貸切）</td>
+      </tr>
+      <tr>
+        <th>企画目的</th>
+        <td>
+          <ul>
+            <li>最新ビューティートレンドのリアルな発信・体感</li>
+            <li>メーカー商材の現場即売および新規サロン開拓の最大化</li>
+            <li>来年の「100周年」に向けたエリア一体の気運醸成（プレ告知）</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 2. センターライブステージ -->
+  <div class="section stage-section">
+    <div class="section-header">
+      <span class="section-num">2</span>
+      <h2>【目玉企画】センターライブステージ（メーカーコラボセミナー）</h2>
+      <span class="badge badge-stage">目玉</span>
+    </div>
+    <p style="font-size:0.9rem; color:#374151; margin-bottom:1rem;">
+      会場のど真ん中に特設ステージ（底上げステージ、モニター完備）を設置。人が動くメイン動線上に配置し、立ち見スタイルで常に賑わいを創出します。
+    </p>
+    <div class="stage-grid">
+      <div class="stage-card">
+        <h3>企画内容</h3>
+        <p>メーカー様の推奨講師や今輝く若手美容師によるトレンドスタイルのデモンストレーション。</p>
+        <ul style="margin-top:0.5rem;">
+          <li>韓国風スタイル、メンズスタイル 等</li>
+          <li>1枠20〜30分・交代制</li>
+        </ul>
+      </div>
+      <div class="stage-card">
+        <h3>会場設備</h3>
+        <ul>
+          <li>底上げ特設ステージ</li>
+          <li>大型モニター完備</li>
+          <li>メイン動線上の好立地</li>
+          <li>立ち見スタイルで自由参加</li>
+        </ul>
+      </div>
+    </div>
+    <div class="privilege-box">
+      <strong>✦ ステージ協力メーカー様への特別優遇</strong>
+      講師招致・企画持ち込みにご協力いただけるメーカー様には、出店料やオペレーション面での特別優遇措置を適用いたします。ぜひお気軽にご相談ください。
+    </div>
+  </div>
+
+  <!-- 3. 認定発注書 -->
+  <div class="section rule-section">
+    <div class="section-header">
+      <span class="section-num">3</span>
+      <h2>【最重要ルール】認定発注書の運用徹底</h2>
+      <span class="badge badge-rule">必須</span>
+    </div>
+    <p style="font-size:0.9rem; color:#7f1d1d; margin-bottom:1rem;">
+      イベントでの売上成果を可視化・追跡するため、全出店メーカー様に共通ルールを適用します。
+    </p>
+    <div class="rule-steps">
+      <div class="rule-step">
+        <span class="rule-step-icon">STEP<br>1</span>
+        <p><strong>専用発注書のご準備</strong><br>ビューティーコレクション専用（神奈川担当者印が確認できる状態）の発注書を各メーカー様でご用意ください。</p>
+      </div>
+      <div class="rule-step">
+        <span class="rule-step-icon">STEP<br>2</span>
+        <p><strong>ブース商談時に記入・回収</strong><br>その場での記入と回収を徹底してください。後日処理は認められません。</p>
+      </div>
+      <div class="rule-step">
+        <span class="rule-step-icon">STEP<br>3</span>
+        <p><strong>事務局にて集計・フィードバック</strong><br>回収した発注書は後日事務局にて集計し、売上成果として正確にフィードバックいたします。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. SETRA特設ブース -->
+  <div class="section setra-section">
+    <div class="section-header">
+      <span class="section-num">4</span>
+      <h2>【弊社主催コーナー】セトラ（SETRA）特設ブースのご案内</h2>
+      <span class="badge badge-setra">主催者</span>
+    </div>
+    <p style="font-size:0.9rem; color:#064e3b; margin-bottom:1rem;">
+      セトラは弊社（主催者）の販売部門として、出店メーカー様とは異なる独自の物販・情報発信コーナーを設置いたします。
+    </p>
+    <div class="setra-grid">
+      <div class="setra-card">
+        <h3>限定雑品の展示</h3>
+        <p>メーカーブースでは取り扱いのない、セトラ限定のタオルやクロス等の雑品類を展示いたします。</p>
+      </div>
+      <div class="setra-card">
+        <h3>サロン周遊のハブ</h3>
+        <p>デジタルスタンプラリーや宝探し等と連動し、来場サロン様が必ず立ち寄るスポットとして会場全体の周遊性を高めます。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. 受付・入場オペレーション -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">5</span>
+      <h2>受付・入場オペレーション</h2>
+    </div>
+    <ul class="reception-list">
+      <li>事前にQRコードから登録いただき、当日の入場ログ管理を最適化します。</li>
+      <li>来場サロン様への利益還元として、事前申告制によるお弁当手配などを実施予定です。</li>
+      <li>過度なコストをかけずに満足度を高める施策を順次導入いたします。</li>
+    </ul>
+  </div>
+
+  <!-- 6. CTA -->
+  <div class="cta-section">
+    <h2>出店お申し込み・お問い合わせ</h2>
+    <p>ご不明点やステージ企画のご相談はお気軽にお問い合わせください。</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn btn-primary">出店エントリーフォーム<span class="btn-tag">準備中</span></a>
+      <a href="#" class="btn btn-outline">お問い合わせはこちら</a>
+    </div>
+  </div>
+
+</div><!-- /wrapper -->
+
+<footer>
+  &copy; 2026 Beauty Collection 実行委員会 — 本ページは出店パートナーメーカー様限定のご案内資料です。
+</footer>
+
+</body>
+</html>
