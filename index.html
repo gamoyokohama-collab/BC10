@@ -322,8 +322,8 @@
 <header class="hero">
   <div class="hero-status-bar">
     <div class="hero-eyebrow">MAKER PARTNER INVITATION 2026</div>
-    <!-- 閲覧者が更新に気付けるバッジ（日付は都度書き換えてください） -->
-    <div class="hero-update-badge">LAST UPDATED: 2026.06.17</div>
+    <!-- ここは固定テキストを書かないでください。JS(UPDATE_LOGの先頭日付)から自動生成されます -->
+    <div class="hero-update-badge" id="heroUpdateBadge">LAST UPDATED: ----.--.--</div>
   </div>
   <h1>10月ビューティーコレクション<br>出展のご案内・企画概要</h1>
   <p class="hero-sub">パートナーメーカー各位</p>
@@ -359,13 +359,8 @@
       <span>🔄 本ページの情報更新履歴</span>
       <span style="font-weight: normal; color: var(--text-mute); font-size: 0.8rem;">※次回更新：7月上旬頃を予定</span>
     </h3>
-    <ul class="update-log-list">
-      <li class="update-log-item">
-        <span class="update-log-date">2026.06.17</span>
-        <span class="update-log-text">特設案内ページ公開・企画概要（ライブステージ・認定発注書ルール等）を掲載。</span>
-      </li>
-      <!-- 今後ここに新しい更新内容を上に追記していきます -->
-    </ul>
+    <!-- ここは空のままでOK。JSがUPDATE_LOG配列から自動描画します -->
+    <ul class="update-log-list" id="updateLogList"></ul>
   </div>
 
   <!-- GREETING -->
@@ -549,6 +544,48 @@
 <footer>
   &copy; 2026 Beauty Collection Autumn実行委員会 — 本ページは出店パートナーメーカー様限定のご案内資料です。
 </footer>
+
+<script>
+  /* ============================================================
+     更新履歴データ（ここに追記するだけでOK）
+     ------------------------------------------------------------
+     ・新しい更新をしたら、この配列の「先頭」に1件追加してください。
+     ・配列の先頭（＝一番新しい日付）が自動的に
+       ヘッダーの「LAST UPDATED」バッジに反映されます。
+     ・date は "YYYY.MM.DD" 形式で入力してください。
+     ============================================================ */
+  const UPDATE_LOG = [
+    {
+      date: "2026.06.17",
+      text: "特設案内ページ公開・企画概要（ライブステージ・認定発注書ルール等）を掲載。"
+    }
+    // 例）新しい更新をしたらこの下（配列の先頭側）に追加：
+    // { date: "2026.07.03", text: "会場レイアウト・場内マップをPDFで公開しました。" },
+  ];
+
+  function renderUpdateLog() {
+    const badge = document.getElementById("heroUpdateBadge");
+    const list = document.getElementById("updateLogList");
+
+    if (!UPDATE_LOG.length) return;
+
+    // バッジには配列の先頭（最新）の日付を自動反映
+    badge.textContent = "LAST UPDATED: " + UPDATE_LOG[0].date;
+
+    // 履歴リストを全件描画
+    list.innerHTML = "";
+    UPDATE_LOG.forEach(entry => {
+      const li = document.createElement("li");
+      li.className = "update-log-item";
+      li.innerHTML =
+        '<span class="update-log-date">' + entry.date + '</span>' +
+        '<span class="update-log-text">' + entry.text + '</span>';
+      list.appendChild(li);
+    });
+  }
+
+  renderUpdateLog();
+</script>
 
 </body>
 </html>
